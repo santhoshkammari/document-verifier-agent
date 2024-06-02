@@ -1,3 +1,4 @@
+import json
 import shutil
 import time
 
@@ -28,7 +29,7 @@ def sample_rule(rule_statement):
     return "yes"
 
 def erase_dir():
-    if os.path.isdir("session"):
+    if os.path.exists("session"):
         shutil.rmtree("session")
     os.makedirs("session")
 
@@ -72,15 +73,26 @@ def main():
             for rule in rule_statement.split("\n"):
                 st.success(f"Processing Rule statement : {rule}")
                 res = rule_agent(rule)
-                # res = {"status": "no", "reason": "hurray"}
                 status = res.get("status","")
                 reason = res.get("reason","")
+
+                with open("debug/verifier_agent.json","r") as f:
+                    state = json.load(f)
+
+                for key in ["first_statement","second_statement","operation","first_statement_extraction","first_document_context","second_statement_extraction","second_document_context"]:
+                    if "statement_extraction" in key:
+                        st.write(f"Document: {state[key]['document']}")
+                        st.write(f"Field: {state[key]['field']}")
+                    else:
+                        st.write(f"{key} :: {state[key]}")
+
                 if status.lower().strip() == "yes":
-                    st.success(f"{rule[1]},{reason}")
+                    st.success(f"{status}")
                 elif status.lower().strip() == "no":
-                    st.error(f"{rule[1]}, {reason}")
+                    st.error(f"{status}")
                 else:
                     st.warning(f"Rule is not found")
+                st.write(f"Reason is {reason}")
 
 if __name__ == "__main__":
     main()

@@ -34,6 +34,8 @@ def get_class_methods(cls):
     return {name for name, _ in names}
 
 def rule_agent(query):
+    start = time.perf_counter()
+    print("START DOC VERIFIER AGENT")
     graph = StateGraph(Annotated[dict,reducer])
 
     obj = Operation()
@@ -87,6 +89,8 @@ def rule_agent(query):
     app  = graph.compile()
 
     res = app.invoke({"query":query})
+
+    print(f"Total time taken : {time.perf_counter()-start} Seconds")
     return res
     # img_name = "graph.png"
     # Image.open(io.BytesIO(app.get_graph().draw_mermaid_png())).save(img_name)

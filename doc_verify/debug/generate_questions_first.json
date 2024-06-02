@@ -1,26 +1,53 @@
 {
-  "query": "bill of lading number matches with commercial invoice number",
-  "source_statement": "bill of lading number",
-  "destination_statement": "commercial invoice number",
+  "query": "the bill of lading number matches with commercial invoice number",
+  "source_statement": "the bill of lading number",
+  "destination_statement": "matches with commercial invoice number",
   "operation": "matches",
-  "second_statement": "commercial invoice number",
-  "first_statement": "bill of lading number",
+  "first_statement": "the bill of lading number",
+  "second_statement": "matches with commercial invoice number",
+  "first_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Number"
+  },
+  "second_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Number"
+  },
+  "questions_second_statement": {
+    "variations": [
+      {
+        "variation": "The commercial invoice should be matched with a corresponding identifier."
+      },
+      {
+        "variation": "A commercial invoice must be linked to its unique reference number."
+      },
+      {
+        "variation": "The commercial invoice is expected to match with a specific numerical code."
+      },
+      {
+        "variation": "Commercial invoices are required to be paired with their respective identification numbers."
+      },
+      {
+        "variation": "A matching process should be performed between the commercial invoice and its corresponding number."
+      }
+    ]
+  },
   "questions_first_statement": {
-    "questions": [
+    "variations": [
       {
-        "question": "What is the bill of lading number for the shipment?"
+        "variation": "The bill of lading identification number must be provided."
       },
       {
-        "question": "Can you provide the bill of lading number associated with this delivery?"
+        "variation": "A unique bill of lading reference number should be included."
       },
       {
-        "question": "What is the unique identifier for this shipment, as stated on the bill of lading?"
+        "variation": "The bill of lading's numerical identifier is required."
       },
       {
-        "question": "Is there a specific bill of lading number that corresponds to this order?"
+        "variation": "The bill of lading number, a distinct identifier, must be furnished."
       },
       {
-        "question": "Can you confirm the bill of lading number for the goods being transported?"
+        "variation": "A bill of lading number, serving as a unique reference, should be supplied."
       }
     ]
   }

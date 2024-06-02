@@ -1,6 +1,6 @@
 {
-  "query": "bill of lading number matches with commercial invoice number",
-  "source_statement": "bill of lading number",
-  "destination_statement": "commercial invoice number",
+  "query": "the bill of lading number matches with commercial invoice number",
+  "source_statement": "the bill of lading number",
+  "destination_statement": "matches with commercial invoice number",
   "operation": "matches"
 }

@@ -1,45 +1,34 @@
 {
-  "query": "bill of lading number matches with commercial invoice number",
-  "source_statement": "bill of lading number",
-  "destination_statement": "commercial invoice number",
+  "query": "the bill of lading number matches with commercial invoice number",
+  "source_statement": "the bill of lading number",
+  "destination_statement": "matches with commercial invoice number",
   "operation": "matches",
-  "second_statement": "commercial invoice number",
-  "first_statement": "bill of lading number",
-  "questions_first_statement": {
-    "questions": [
-      {
-        "question": "What is the bill of lading number for the shipment?"
-      },
-      {
-        "question": "Can you provide the bill of lading number associated with this delivery?"
-      },
-      {
-        "question": "What is the unique identifier for this shipment, as stated on the bill of lading?"
-      },
-      {
-        "question": "Is there a specific bill of lading number that corresponds to this order?"
-      },
-      {
-        "question": "Can you confirm the bill of lading number for the goods being transported?"
-      }
-    ]
+  "first_statement": "the bill of lading number",
+  "second_statement": "matches with commercial invoice number",
+  "first_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Number"
+  },
+  "second_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Number"
   },
   "questions_second_statement": {
-    "questions": [
+    "variations": [
       {
-        "question": "What is the commercial invoice number used for?"
+        "variation": "The commercial invoice should be matched with a corresponding identifier."
       },
       {
-        "question": "Can you provide an example of a commercial invoice number?"
+        "variation": "A commercial invoice must be linked to its unique reference number."
       },
       {
-        "question": "How does a commercial invoice number differ from other types of invoices?"
+        "variation": "The commercial invoice is expected to match with a specific numerical code."
       },
       {
-        "question": "Is there a specific format or structure required for a commercial invoice number?"
+        "variation": "Commercial invoices are required to be paired with their respective identification numbers."
       },
       {
-        "question": "What information is typically included in a commercial invoice number?"
+        "variation": "A matching process should be performed between the commercial invoice and its corresponding number."
       }
     ]
   }

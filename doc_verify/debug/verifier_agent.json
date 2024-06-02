@@ -1,70 +1,112 @@
 {
-  "query": "the bill of lading date shoulde be less thatn the date of covering schedule",
-  "source_statement": "the bill of lading date",
-  "destination_statement": "should be less than the date of covering schedule",
-  "operation": "less than",
-  "first_statement": "the bill of lading date",
-  "second_statement": "should be less than the date of covering schedule",
+  "query": "the bill of lading number matches with commercial invoice number",
+  "source_statement": "the bill of lading number",
+  "destination_statement": "matches with commercial invoice number",
+  "operation": "matches",
+  "first_statement": "the bill of lading number",
+  "second_statement": "matches with commercial invoice number",
   "first_statement_extraction": {
     "document": "Bill of Lading",
-    "field": "Date"
-  },
-  "questions_second_statement": {
-    "questions": [
-      {
-        "question": "What is the main idea behind the statement?"
-      },
-      {
-        "question": "How does the statement relate to the concept of time?"
-      },
-      {
-        "question": "Can you provide an example that illustrates the statement's meaning?"
-      },
-      {
-        "question": "Is there a specific date or event that the statement is referring to?"
-      },
-      {
-        "question": "What are some potential implications or consequences of the statement being true?"
-      }
-    ]
+    "field": "Number"
   },
   "second_statement_extraction": {
-    "document": "Covering Schedule",
-    "field": "Date"
+    "document": "Commercial Invoice",
+    "field": "Number"
   },
-  "questions_first_statement": {
-    "questions": [
+  "questions_second_statement": {
+    "variations": [
       {
-        "question": "What is the significance of the bill of lading date?"
+        "variation": "The commercial invoice should be matched with a corresponding identifier."
       },
       {
-        "question": "How does the bill of lading date impact the shipping process?"
+        "variation": "A commercial invoice must be linked to its unique reference number."
       },
       {
-        "question": "Can you provide an example of a situation where the bill of lading date is crucial?"
+        "variation": "The commercial invoice is expected to match with a specific numerical code."
       },
       {
-        "question": "What are the potential consequences if the bill of lading date is incorrect or incomplete?"
+        "variation": "Commercial invoices are required to be paired with their respective identification numbers."
       },
       {
-        "question": "How does the bill of lading date relate to other important shipping documents, such as the commercial invoice?"
+        "variation": "A matching process should be performed between the commercial invoice and its corresponding number."
       }
     ]
   },
-  "first_state_embeds": [
-    "the date: 22-10-1999",
-    "the date: 22-10-1999",
-    "the date: 22-10-1999",
-    "the date: 22-10-1999"
-  ],
+  "questions_first_statement": {
+    "variations": [
+      {
+        "variation": "The bill of lading identification number must be provided."
+      },
+      {
+        "variation": "A unique bill of lading reference number should be included."
+      },
+      {
+        "variation": "The bill of lading's numerical identifier is required."
+      },
+      {
+        "variation": "The bill of lading number, a distinct identifier, must be furnished."
+      },
+      {
+        "variation": "A bill of lading number, serving as a unique reference, should be supplied."
+      }
+    ]
+  },
   "second_state_embeds": [
-    "this document is dated",
-    "is dated on 23-10-1989",
-    "this document is dated",
-    "it has all goods"
+    "We declare that this Invoice shows the actual",
+    "We declare that this Invoice shows the actual",
+    "We declare that this Invoice shows the actual",
+    "te INVOICE\n\nInvoice No. & Date\nBT/EXP/1472",
+    "We declare that this Invoice shows the actual",
+    "Buyer's Order No.& Date. PROFORMA INVOICE",
+    "te INVOICE\n\nInvoice No. & Date\nBT/EXP/1472",
+    "Buyer's Order No.& Date. PROFORMA INVOICE",
+    "Buyer's Order No.& Date. PROFORMA INVOICE",
+    "te INVOICE\n\nInvoice No. & Date\nBT/EXP/1472",
+    "te INVOICE\n\nInvoice No. & Date\nBT/EXP/1472",
+    "Buyer's Order No.& Date. PROFORMA INVOICE",
+    "We declare that this Invoice shows the actual",
+    "Buyer's Order No.& Date. PROFORMA INVOICE",
+    "te INVOICE\n\nInvoice No. & Date\nBT/EXP/1472",
+    "E.P.C.G, LICENCE NO.0230003073/1 1/00",
+    "LICENCE NO.0210184881/2/03/00 DT.01.01.2012-TUBE",
+    "E.P.C.G, LICENCE NO.0230003073/1 1/00",
+    "E.P.C.G, LICENCE NO.0230003073/1 1/00",
+    "LICENCE NO.0210184881/2/03/00 DT.01.01.2012-TUBE",
+    "Place of Receipt by. Pre-Carrier :",
+    "E.P.C.G, LICENCE NO.0230003073/1 1/00",
+    "10.00-20 310 10.00-20 16PR BT 111",
+    "E.P.C.G, LICENCE NO.0230003073/1 1/00",
+    "10.00-20 310 10.00-20 16PR BT 111"
   ],
-  "first_document_context": "22-10-1999",
-  "second_document_context": "23-10-1989",
-  "status": "yes",
-  "reason": "The covering schedule date is less than the bill of lading date"
+  "first_state_embeds": [
+    "PARTICULARS. AS FURNISHED BY SHIPPER\u2019",
+    "itemized, valusd by. the Marchant prior to",
+    "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139",
+    "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139",
+    "itemized, valusd by. the Marchant prior to",
+    "itemized, valusd by. the Marchant prior to",
+    "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139",
+    "IDESCRIPTION OF GOODS i MEASUREMENT",
+    "Goods) and 22 (Law and Jusiscbon}. Tho Package",
+    "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139",
+    "itemized, valusd by. the Marchant prior to",
+    "Bar), 19 (Merchant's",
+    "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139",
+    "Goods) and 22 (Law and Jusiscbon}. Tho Package",
+    "ent 49 (Lien), 18 (Dangerous end Harardous Goods)",
+    "is paid o\u00a2 contracted for",
+    "IDESCRIPTION OF GOODS i MEASUREMENT",
+    "ent 49 (Lien), 18 (Dangerous end Harardous Goods)",
+    "itemized, valusd by. the Marchant prior to",
+    "ent 49 (Lien), 18 (Dangerous end Harardous Goods)",
+    "Bar), 19 (Merchant's",
+    "prior to leading and. Ad Valoram Freight is paid",
+    "PARTICULARS. AS FURNISHED BY SHIPPER\u2019",
+    "prior to leading and. Ad Valoram Freight is paid",
+    "FREIGHT PAYABLE AT No, OF ORIGINAL Gl ISSUED"
+  ],
+  "second_document_context": "BT/EXP/1472",
+  "first_document_context": "ZIMUOSS160139",
+  "status": "no",
+  "reason": "The field values 'ZIMUOSS160139' and 'BT/EXP/1472' do not match."
 }

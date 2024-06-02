@@ -31,12 +31,12 @@ def debug(func,*args, **kwargs):
 
 def retreive_agent_first(state: dict):
     res = retreive_document_information(document=state["first_statement_extraction"]["document"],
-                                        questions=state["questions_first_statement"]["questions"])
+                                        questions=state["questions_first_statement"]["variations"])
     return res
 
 def retreive_agent_second(state: dict):
     res = retreive_document_information(document=state["second_statement_extraction"]["document"],
-                                        questions=state["questions_second_statement"]["questions"])
+                                        questions=state["questions_second_statement"]["variations"])
     return res
 class Operation:
 
@@ -50,10 +50,10 @@ class Operation:
     def split_agent(self,state: dict):
         res = rule_splitter_agent(state["query"])
         # res = {
-        #   "query": "the bill of lading date shoulde be less thatn the date of covering schedule",
-        #   "source_statement": "the bill of lading date",
-        #   "destination_statement": "should be less than the date of covering schedule",
-        #   "operation": "less than"
+        #   "query": "the bill of lading number matches with commercial invoice number",
+        #   "source_statement": "the bill of lading number",
+        #   "destination_statement": "matches with commercial invoice number",
+        #   "operation": "matches"
         # }
         state["source_statement"] = res.get("source_statement")
         state["destination_statement"] = res.get("destination_statement")
@@ -63,32 +63,12 @@ class Operation:
 
     def generate_questions_first(self,state: dict):
         res = generate_questions_agent(state["first_statement"])
-        # res = {
-        #     "questions": [
-        #       {
-        #         "question": "What is the significance of the bill of lading date?"
-        #       },
-        #       {
-        #         "question": "How does the bill of lading date impact the shipping process?"
-        #       },
-        #       {
-        #         "question": "Can you provide an example of a situation where the bill of lading date is crucial?"
-        #       },
-        #       {
-        #         "question": "What are the potential consequences if the bill of lading date is incorrect?"
-        #       },
-        #       {
-        #         "question": "How does the bill of lading date relate to other important shipping documents?"
-        #       }
-        #     ]
-        #   }
         state["questions_first_statement"] = res
 
         return state
 
     def generate_questions_second(self,state: dict):
         res = generate_questions_agent(state["second_statement"])
-        # res = {"questions": ["sample4", "sample5", "sample6"]}
         state["questions_second_statement"] = res
 
         return state
@@ -98,19 +78,19 @@ class Operation:
 
     def keys_extraction_first(self,state: dict):
         res = extraction_agent(state["source_statement"])
-        # res = {
+        # res =  {
         #     "document": "Bill of Lading",
-        #     "field": "Date",
-        #     "key": "2023-02-15"
+        #     "field": "Number"
         #   }
         state["first_statement_extraction"] = res
         return state
 
     def keys_extraction_second(self,state: dict):
         res = extraction_agent(state["destination_statement"])
-        # res = {"document": "second doc title",
-        #        "key": "keyname",
-        #        "field": "fieldname"}
+        # res = {
+        #     "document": "Commercial Invoice",
+        #     "field": "Number"
+        #   }
         state["second_statement_extraction"] = res
         return state
 
@@ -118,39 +98,37 @@ class Operation:
     def extract_agent_first(self,state: dict):
         state["first_state_embeds"] = retreive_agent_first(state)
         query = {"query": "\n".join(state["first_state_embeds"]),
-                 "field": state.get("first_statement_extraction", {}).get("field"),
-                 "document": state.get("first_statement_extraction", {}).get("document")}
+                 "field": state.get("first_statement_extraction", {}).get("field")}
         res = extraction_keys_info_agent(query)
         # res = {'field': ['22-10-1999', '22-10-1999', '22-10-1999']}
-        res = res.get("field","Not Found")
         state["first_document_context"] = " or ".join(res) if isinstance(res,list) else res
         return state
 
     def extract_agent_second(self,state: dict):
         state["second_state_embeds"] = retreive_agent_second(state)
         query = {"query": "\n".join(state["second_state_embeds"]),
-                 "field": state.get("second_statement_extraction", {}).get("field"),
-                 "document": state.get("second_statement_extraction", {}).get("document")}
+                 "field": state.get("second_statement_extraction", {}).get("field")}
         res = extraction_keys_info_agent(query)
         # res = {'field': ['22-10-1999', '22-10-1999', '22-10-1999']}
-        res = res.get("field", "Not Found")
         state["second_document_context"] = " or ".join(res) if isinstance(res, list) else res
         return state
 
     def verifier_agent(self,state: dict):
         input_data = {
-            "first_document_context": state["first_document_context"] + state[
-                "first_document_context"],
+            "first_document_context": state["first_document_context"],
             "first_document": state["first_statement_extraction"].get("document"),
-            "second_document_context": state["second_document_context"] + state[
-                "second_document_context"],
+            "first_document_field": state["first_statement_extraction"].get("field"),
+            "second_document_context": state["second_document_context"],
             "second_document": state["second_statement_extraction"].get("document"),
-            "action_or_perform": state["operation"]
+            "second_document_field": state["second_statement_extraction"].get("field"),
+            "action_or_perform": state["operation"],
+            "state":deepcopy(state)
         }
         res = verifier_agent(input_data)
         # res = {}
         state["status"] = res.get("status")
         state["reason"] = res.get("reason")
+        print("Done AGent Verficiation !!")
         return state
 
 

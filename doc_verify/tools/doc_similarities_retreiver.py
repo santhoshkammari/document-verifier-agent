@@ -1,3 +1,4 @@
+import json
 import os
 from typing import List
 
@@ -16,28 +17,39 @@ def sentences_similarity_score(split, question):
 
 
 def retreive_document_information(document,questions:List):
-    path = "/home/ntlpt59/MAIN/LLM/lang-graph-explore/doc_verify/session"
+    path = "session"
     doc_scores = []
     alldocs = os.listdir(path)
     for doc in alldocs:
         doc = doc.split(".")[0]
         doc_scores.append(sentences_similarity_score(doc,document))
 
-    document = alldocs[doc_scores.index(max(doc_scores))].split(".")[0]
+    document = alldocs[doc_scores.index(max(doc_scores))]
     print(f"document: {document}")
-    k = 4
-    with open(f'/home/ntlpt59/MAIN/LLM/lang-graph-explore/doc_verify/session/{document}.txt',"r") as f:
+    k = 25
+    with open(f'session/{document}', "r", encoding="utf-8", errors="ignore") as f:
         text = f.read()
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=25,
+
+    print(f'{len(text)=}')
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=50,
                                                    chunk_overlap=10)
     splits = text_splitter.split_text(text)
     matches = []
+    with open(f"session/{document} textsplit.json",'w') as f:
+        json.dump(splits,f,indent=2)
+
+    print(f"splits saved for {document}")
+
     for split in splits:
         for question in questions:
-            question = question.get("question") if isinstance(question, dict) else question
+            question = question.get("variation") if isinstance(question, dict) else question
             score = sentences_similarity_score(split, question)
             matches.append((score,question,split))
+
+
     sorted_matches = sorted(matches,key=lambda x:x[0],reverse=True)
+    with open(f"session/{document} matches.json",'w') as f:
+        json.dump(matches,f,indent=2)
     return [_[-1] for _ in sorted_matches[:k]]
 
 if __name__ == '__main__':
