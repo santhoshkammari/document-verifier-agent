@@ -1,0 +1,4 @@
+bol document
+
+the date: 22-10-1999
+place: Hyderabad

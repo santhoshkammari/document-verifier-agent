@@ -1,0 +1,46 @@
+{
+  "query": "bill of lading number matches with commercial invoice number",
+  "source_statement": "bill of lading number",
+  "destination_statement": "commercial invoice number",
+  "operation": "matches",
+  "second_statement": "commercial invoice number",
+  "first_statement": "bill of lading number",
+  "questions_first_statement": {
+    "questions": [
+      {
+        "question": "What is the bill of lading number for the shipment?"
+      },
+      {
+        "question": "Can you provide the bill of lading number associated with this delivery?"
+      },
+      {
+        "question": "What is the unique identifier for this shipment, as stated on the bill of lading?"
+      },
+      {
+        "question": "Is there a specific bill of lading number that corresponds to this order?"
+      },
+      {
+        "question": "Can you confirm the bill of lading number for the goods being transported?"
+      }
+    ]
+  },
+  "questions_second_statement": {
+    "questions": [
+      {
+        "question": "What is the commercial invoice number used for?"
+      },
+      {
+        "question": "Can you provide an example of a commercial invoice number?"
+      },
+      {
+        "question": "How does a commercial invoice number differ from other types of invoices?"
+      },
+      {
+        "question": "Is there a specific format or structure required for a commercial invoice number?"
+      },
+      {
+        "question": "What information is typically included in a commercial invoice number?"
+      }
+    ]
+  }
+}

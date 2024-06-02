@@ -1,0 +1,70 @@
+{
+  "query": "the bill of lading date shoulde be less thatn the date of covering schedule",
+  "source_statement": "the bill of lading date",
+  "destination_statement": "should be less than the date of covering schedule",
+  "operation": "less than",
+  "first_statement": "the bill of lading date",
+  "second_statement": "should be less than the date of covering schedule",
+  "first_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Date"
+  },
+  "questions_second_statement": {
+    "questions": [
+      {
+        "question": "What is the main idea behind the statement?"
+      },
+      {
+        "question": "How does the statement relate to the concept of time?"
+      },
+      {
+        "question": "Can you provide an example that illustrates the statement's meaning?"
+      },
+      {
+        "question": "Is there a specific date or event that the statement is referring to?"
+      },
+      {
+        "question": "What are some potential implications or consequences of the statement being true?"
+      }
+    ]
+  },
+  "second_statement_extraction": {
+    "document": "Covering Schedule",
+    "field": "Date"
+  },
+  "questions_first_statement": {
+    "questions": [
+      {
+        "question": "What is the significance of the bill of lading date?"
+      },
+      {
+        "question": "How does the bill of lading date impact the shipping process?"
+      },
+      {
+        "question": "Can you provide an example of a situation where the bill of lading date is crucial?"
+      },
+      {
+        "question": "What are the potential consequences if the bill of lading date is incorrect or incomplete?"
+      },
+      {
+        "question": "How does the bill of lading date relate to other important shipping documents, such as the commercial invoice?"
+      }
+    ]
+  },
+  "first_state_embeds": [
+    "the date: 22-10-1999",
+    "the date: 22-10-1999",
+    "the date: 22-10-1999",
+    "the date: 22-10-1999"
+  ],
+  "second_state_embeds": [
+    "this document is dated",
+    "is dated on 23-10-1989",
+    "this document is dated",
+    "it has all goods"
+  ],
+  "first_document_context": "22-10-1999",
+  "second_document_context": "23-10-1989",
+  "status": "yes",
+  "reason": "The covering schedule date is less than the bill of lading date"
+}
