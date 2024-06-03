@@ -78,8 +78,8 @@ def extraction_keys_info_agent(query):
     4. If the requested field is not present in the context, respond with "Field not found."
     5. If the context is unclear or ambiguous, respond with "Context unclear."
 
-    Your response should be in the following format:
-    {format_instructions}
+    # Your response should be in the following format:
+    # {format_instructions}
     """
 
     template_v1_0_0 = """
