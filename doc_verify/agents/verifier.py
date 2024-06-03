@@ -106,7 +106,11 @@ def verifier_agent(input_data):
 
     chain = prompt | model | parser
 
-    res = chain.invoke(input_data)
+    if 'not found' in [input_data["first_document_context"],input_data["second_document_context"]]:
+        res = {"status": "not found", "reason": "not found", "state": input_data.get("state", {})}
+    else:
+        res = chain.invoke(input_data)
+
     res = {"status":res.status,
            "reason":res.reason,
            "state":input_data.get("state",{})}
