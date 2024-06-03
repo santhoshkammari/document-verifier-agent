@@ -59,14 +59,16 @@ def main():
 
     if st.button("Extract Text"):
         if image1 is not None and doc_name1:
-            img1 = Image.open(image1)
-            text1 = ocr_image(img1, doc_name1)
+            # img1 = Image.open(image1)
+            # text1 = ocr_image(img1, doc_name1)
+            text1 = image1
             st.success(f"Text extracted from {doc_name1} and saved as {doc_name1}.txt")
             st.write(f"Extracted Text: \n{text1}")
 
         if image2 is not None and doc_name2:
-            img2 = Image.open(image2)
-            text2 = ocr_image(img2, doc_name2)
+            # img2 = Image.open(image2)
+            # text2 = ocr_image(img2, doc_name2)
+            text2 = image2
             st.success(f"Text extracted from {doc_name2} and saved as {doc_name2}.txt")
             st.write(f"Extracted Text: \n{text2}")
 

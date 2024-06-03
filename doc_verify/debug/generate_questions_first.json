@@ -3,12 +3,8 @@
   "source_statement": "Commercial invoice date",
   "destination_statement": "Issue date of bill of lading",
   "operation": "should be less than",
-  "second_statement": "Issue date of bill of lading",
   "first_statement": "Commercial invoice date",
-  "first_statement_extraction": {
-    "document": "Commercial Invoice",
-    "field": "Date"
-  },
+  "second_statement": "Issue date of bill of lading",
   "second_statement_extraction": {
     "document": "Bill of Lading",
     "field": "Issue Date"
@@ -31,6 +27,10 @@
         "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
       }
     ]
+  },
+  "first_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Date"
   },
   "questions_first_statement": {
     "variations": [
