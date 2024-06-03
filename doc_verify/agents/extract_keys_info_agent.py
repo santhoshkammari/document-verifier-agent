@@ -154,14 +154,12 @@ def extraction_keys_info_agent(query):
         res = parser.parse(res.content)
         res = res.field
     except:
-        # try:
-        print('==================================')
-        print('==================================')
-        json_parser = JsonOutputParser()
-        res = json_parser.parse(res.content)
-        res = res["field"]
-        # except:
-        #     res = "Not found"
+        try:
+            json_parser = JsonOutputParser()
+            res = json_parser.parse(res.content)
+            res = res["field"]
+        except:
+            res = "Not found"
     return res
 
 if __name__ == '__main__':
