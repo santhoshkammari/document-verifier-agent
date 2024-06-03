@@ -148,8 +148,6 @@ def extraction_keys_info_agent(query):
 
     res = chain.invoke(query)
 
-    print(f'{res.content=}')
-
     try:
         res = parser.parse(res.content)
         res = res.field
