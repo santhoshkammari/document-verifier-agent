@@ -46,10 +46,12 @@ def main():
     erase_dir()
 
     # Upload images
-    image1 = st.file_uploader("Upload Image 1", type=["png", "jpg", "jpeg"])
+    # image1 = st.file_uploader("Upload Image 1", type=["png", "jpg", "jpeg"])
+    image1 = st.text_input("Document1 OCR Text")
     doc_name1 = st.text_input("Enter Document Name for Image 1")
 
-    image2 = st.file_uploader("Upload Image 2", type=["png", "jpg", "jpeg"])
+    # image2 = st.file_uploader("Upload Image 2", type=["png", "jpg", "jpeg"])
+    image2 = st.text_input("Enter Document2 Ocr Text")
     doc_name2 = st.text_input("Enter Document Name for Image 2")
 
     # Input rule statement
