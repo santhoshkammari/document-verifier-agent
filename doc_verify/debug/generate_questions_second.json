@@ -1,0 +1,54 @@
+{
+  "query": "commercial invoice date should be less than the issue date of bill of lading",
+  "source_statement": "Commercial invoice date",
+  "destination_statement": "Issue date of bill of lading",
+  "operation": "should be less than",
+  "first_statement": "Commercial invoice date",
+  "second_statement": "Issue date of bill of lading",
+  "questions_first_statement": {
+    "variations": [
+      {
+        "variation": "The commercial invoice date should not exceed 90 days from the shipment date."
+      },
+      {
+        "variation": "The shipment date's corresponding commercial invoice must be within 90 days."
+      },
+      {
+        "variation": "The validity period of the commercial invoice cannot surpass 90 days after the goods are shipped."
+      },
+      {
+        "variation": "The maximum validity duration for the commercial invoice is 90 days from the date of dispatch."
+      },
+      {
+        "variation": "The commercial invoice's expiration must occur within a 90-day window after the shipment date."
+      }
+    ]
+  },
+  "second_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Issue Date"
+  },
+  "first_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Date"
+  },
+  "questions_second_statement": {
+    "variations": [
+      {
+        "variation": "The issue date of bill of lading should not exceed [insert timeframe] from the shipment date."
+      },
+      {
+        "variation": "The bill of lading's issuance date must be within [insert timeframe] of the shipment date."
+      },
+      {
+        "variation": "The validity period of the bill of lading cannot surpass [insert timeframe] after the goods are shipped."
+      },
+      {
+        "variation": "The bill of lading's issue should be no later than [insert timeframe] from the shipment date."
+      },
+      {
+        "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
+      }
+    ]
+  }
+}
