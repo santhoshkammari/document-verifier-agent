@@ -59,7 +59,7 @@
 
 from typing import List, Literal
 
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser, JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
 from tools.llm import LLM
@@ -104,15 +104,28 @@ def verifier_agent(input_data):
 
     model = LLM.call_model
 
-    chain = prompt | model | parser
+    chain = prompt | model
 
     if 'not found' in [input_data["first_document_context"],input_data["second_document_context"]]:
         res = {"status": "not found", "reason": "not found", "state": input_data.get("state", {})}
     else:
         res = chain.invoke(input_data)
+        res  = res.content
 
-    res = {"status":res.status,
-           "reason":res.reason,
+        try:
+            res = parser.parse(res)
+            s,r = res.status,res.reason
+        except:
+            try:
+                jp = JsonOutputParser()
+                res = jp.parse(res)
+                s,r = res["status"],res["reason"]
+            except:
+                s = "not found"
+                r = "not found"
+
+        res = {"status":s,
+           "reason":r,
            "state":input_data.get("state",{})}
     return res
 

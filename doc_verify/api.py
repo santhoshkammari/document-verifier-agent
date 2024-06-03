@@ -46,12 +46,12 @@ def main():
     erase_dir()
 
     # Upload images
-    # image1 = st.file_uploader("Upload Image 1", type=["png", "jpg", "jpeg"])
-    image1 = st.text_input("Document1 OCR Text")
+    image1 = st.file_uploader("Upload Image 1", type=["png", "jpg", "jpeg"])
+    # image1 = st.text_input("Document1 OCR Text")
     doc_name1 = st.text_input("Enter Document Name for Image 1")
 
-    # image2 = st.file_uploader("Upload Image 2", type=["png", "jpg", "jpeg"])
-    image2 = st.text_input("Enter Document2 Ocr Text")
+    image2 = st.file_uploader("Upload Image 2", type=["png", "jpg", "jpeg"])
+    # image2 = st.text_input("Enter Document2 Ocr Text")
     doc_name2 = st.text_input("Enter Document Name for Image 2")
 
     # Input rule statement
@@ -59,16 +59,16 @@ def main():
 
     if st.button("Extract Text"):
         if image1 is not None and doc_name1:
-            # img1 = Image.open(image1)
-            # text1 = ocr_image(img1, doc_name1)
-            text1 = image1
+            img1 = Image.open(image1)
+            text1 = ocr_image(img1, doc_name1)
+            # text1 = image1
             st.success(f"Text extracted from {doc_name1} and saved as {doc_name1}.txt")
             st.write(f"Extracted Text: \n{text1}")
 
         if image2 is not None and doc_name2:
-            # img2 = Image.open(image2)
-            # text2 = ocr_image(img2, doc_name2)
-            text2 = image2
+            img2 = Image.open(image2)
+            text2 = ocr_image(img2, doc_name2)
+            # text2 = image2
             st.success(f"Text extracted from {doc_name2} and saved as {doc_name2}.txt")
             st.write(f"Extracted Text: \n{text2}")
 

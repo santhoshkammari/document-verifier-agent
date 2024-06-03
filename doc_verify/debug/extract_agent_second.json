@@ -3,31 +3,8 @@
   "source_statement": "Commercial invoice date",
   "destination_statement": "Issue date of bill of lading",
   "operation": "should be less than",
-  "second_statement": "Issue date of bill of lading",
   "first_statement": "Commercial invoice date",
-  "questions_first_statement": {
-    "variations": [
-      {
-        "variation": "The commercial invoice date should not exceed 90 days from the shipment date."
-      },
-      {
-        "variation": "The shipment date's corresponding commercial invoice must be within 90 days."
-      },
-      {
-        "variation": "The validity period of the commercial invoice cannot surpass 90 days after the goods are shipped."
-      },
-      {
-        "variation": "The maximum validity duration for the commercial invoice is 90 days from the date of dispatch."
-      },
-      {
-        "variation": "The commercial invoice's expiration must occur within a 90-day window after the shipment date."
-      }
-    ]
-  },
-  "first_statement_extraction": {
-    "document": "Commercial Invoice",
-    "field": "Date"
-  },
+  "second_statement": "Issue date of bill of lading",
   "second_statement_extraction": {
     "document": "Bill of Lading",
     "field": "Issue Date"
@@ -48,10 +25,41 @@
       },
       {
         "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
+      },
+      {
+        "variation": "Issue date of bill of lading"
+      }
+    ]
+  },
+  "first_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Date"
+  },
+  "questions_first_statement": {
+    "variations": [
+      {
+        "variation": "The commercial invoice date should not exceed 90 days from the shipment date."
+      },
+      {
+        "variation": "The shipment date's corresponding commercial invoice must be within 90 days."
+      },
+      {
+        "variation": "The validity period of the commercial invoice cannot surpass 90 days after the goods are shipped."
+      },
+      {
+        "variation": "The maximum validity duration for the commercial invoice is 90 days from the date of dispatch."
+      },
+      {
+        "variation": "The commercial invoice's expiration must occur within a 90-day window after the shipment date."
+      },
+      {
+        "variation": "Commercial invoice date"
       }
     ]
   },
   "first_state_embeds": [
+    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
+    "AS PER SALES CONTRACT NO.10250800 DATE:",
     "AS PER SALES CONTRACT NO.10250800 DATE:",
     "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
     "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
@@ -63,48 +71,46 @@
     "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
     "AS PER SALES CONTRACT NO.10250800 DATE:",
     "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "TEL:02-25062089 FAX:02-25051990",
+    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
     "DATE: SEP.13,2013",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
-    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "DATE: SEP.13,2013",
     "TEL:02-25062089 FAX:02-25051990",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
-    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "KGS USD\nPCS: FLOCK FABRICS 3,102.00 . 7,755.00",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
+    "TEL:02-25062089 FAX:02-25051990",
     "MARKS & NOS. DESCRIPTION QUANTITY UNIT PRIC",
+    "DATE: SEP.13,2013",
+    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
+    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
+    "UNIT PRIC AMOUNT",
+    "DATE: SEP.13,2013",
     "TEL:02-25062089 FAX:02-25051990",
-    "TEL:02-25062089 FAX:02-25051990",
-    "- OCEANIC PETROLEUM SOURCE (ASIA PACIFIC) LTD."
+    "B/L NO. OOLU2539190800 DATE: OCT.14,2013"
   ],
   "second_state_embeds": [
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "this Bill of Lading accepts the liabifity towards",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "this Bill of Lading accepts the liabifity towards",
-    "Date of Period of Delivery Mode Means of",
-    "this Bill of Lading accepts the liabifity towards",
-    "this Bill of Lading accepts the liabifity towards",
-    "this Bill of Lading accepts the liabifity towards",
-    "Date of Period of Delivery Mode Means of",
     "of this Bill of Lading.",
-    "@ For freight prepaid Bil of Ladings, delivery of",
+    "this Bill of Lading accepts the liabifity towards",
     "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "Date of Period of Delivery Mode Means of",
     "\u00a9 By accepting this Bill of Lading shipper",
-    "of this Bill of Lading.",
-    "@ For freight prepaid Bil of Ladings, delivery of",
-    "of this Bill of Lading.",
+    "\u00a9 By accepting this Bill of Lading shipper",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
+    "\u00a9 By accepting this Bill of Lading shipper",
+    "\u00a9 By accepting this Bill of Lading shipper",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
     "| Place and Date of Issue",
-    "Date of Period of Delivery Mode Means of"
+    "\u00a9 By accepting this Bill of Lading shipper",
+    "this Bill of Lading accepts the liabifity towards",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
+    "this Bill of Lading accepts the liabifity towards",
+    "Date of Period of Delivery Mode Means of",
+    "this Bill of Lading accepts the liabifity towards",
+    "this Bill of Lading accepts the liabifity towards",
+    "this Bill of Lading accepts the liabifity towards",
+    "Date of Period of Delivery Mode Means of",
+    "of this Bill of Lading.",
+    "@ For freight prepaid Bil of Ladings, delivery of",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
+    "Date of Period of Delivery Mode Means of",
+    "\u00a9 By accepting this Bill of Lading shipper"
   ],
-  "first_document_context": "OCT.14,2013 or SEP.13,2013 or OCT.14,2013",
-  "second_document_context": "Not found"
+  "first_document_context": "Not found",
+  "second_document_context": "Place and Date of Issue"
 }
