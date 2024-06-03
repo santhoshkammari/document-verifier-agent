@@ -38,7 +38,7 @@ def retreive_agent_first(state: dict):
 def retreive_agent_second(state: dict):
     res = retreive_document_information(document=state["second_statement_extraction"]["document"],
                                         questions=state["questions_second_statement"]["variations"],
-                                        state= state["second_statement"])
+                                        statement= state["second_statement"])
     return res
 class Operation:
 

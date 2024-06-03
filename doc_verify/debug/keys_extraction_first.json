@@ -3,8 +3,31 @@
   "source_statement": "Commercial invoice date",
   "destination_statement": "Issue date of bill of lading",
   "operation": "should be less than",
-  "second_statement": "Issue date of bill of lading",
   "first_statement": "Commercial invoice date",
+  "second_statement": "Issue date of bill of lading",
+  "second_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Issue Date"
+  },
+  "questions_second_statement": {
+    "variations": [
+      {
+        "variation": "The issue date of bill of lading should not exceed [insert timeframe] from the shipment date."
+      },
+      {
+        "variation": "The bill of lading's issuance date must be within [insert timeframe] of the shipment date."
+      },
+      {
+        "variation": "The validity period of the bill of lading cannot surpass [insert timeframe] after the goods are shipped."
+      },
+      {
+        "variation": "The bill of lading's issue should be no later than [insert timeframe] from the shipment date."
+      },
+      {
+        "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
+      }
+    ]
+  },
   "questions_first_statement": {
     "variations": [
       {
