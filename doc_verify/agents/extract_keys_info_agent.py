@@ -116,8 +116,38 @@ def extraction_keys_info_agent(query):
 
     Response Format:
     {format_instructions}"""
+
+    template_v1_0_1 ="""
+    Extract the value of the specified field from the given context, which may contain unstructured or fragmented text.
+
+    Context: {query}
+    Field: {field}
+
+    Instructions:
+    1. Scan the context for any text that represents the requested field value.
+    2. If found, extract the relevant value(s).
+    3. If not found, respond with "Not found".
+    4. Separate multiple values with commas.
+    5. Preserve any formatting or special characters.
+
+    Examples:
+    Context: "John Doe, 25, New York"
+    Field: Age
+    Output: 25
+
+    Context: "Prices: $10, $15, $20"  
+    Field: Prices
+    Output: $10, $15, $20
+
+    Context: "Error: File not found at /docs/report.txt"
+    Field: Error Message
+    Output: File not found at /docs/report.txt
+
+    Response Format:
+    {format_instructions}
+    """
     prompt = PromptTemplate(
-        template=template_v1_0_0,
+        template=template_v1_0_1,
         input_variables=["query", "field"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
