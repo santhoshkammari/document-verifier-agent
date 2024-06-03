@@ -16,7 +16,8 @@ def sentences_similarity_score(split, question):
 
 
 
-def retreive_document_information(document,questions:List):
+def retreive_document_information(document,questions:List,statement):
+    questions = questions.append(statement) ### add original question along with variations
     path = "session"
     doc_scores = []
     alldocs = os.listdir(path)

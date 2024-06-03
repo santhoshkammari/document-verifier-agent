@@ -3,8 +3,8 @@
   "source_statement": "Commercial invoice date",
   "destination_statement": "Issue date of bill of lading",
   "operation": "should be less than",
-  "first_statement": "Commercial invoice date",
   "second_statement": "Issue date of bill of lading",
+  "first_statement": "Commercial invoice date",
   "questions_first_statement": {
     "variations": [
       {
@@ -24,13 +24,13 @@
       }
     ]
   },
-  "second_statement_extraction": {
-    "document": "Bill of Lading",
-    "field": "Issue Date"
-  },
   "first_statement_extraction": {
     "document": "Commercial Invoice",
     "field": "Date"
+  },
+  "second_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Issue Date"
   },
   "questions_second_statement": {
     "variations": [
@@ -105,6 +105,6 @@
     "| Place and Date of Issue",
     "Date of Period of Delivery Mode Means of"
   ],
-  "first_document_context": "Not found",
+  "first_document_context": "OCT.14,2013 or SEP.13,2013 or OCT.14,2013",
   "second_document_context": "Not found"
 }

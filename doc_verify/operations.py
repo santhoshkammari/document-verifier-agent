@@ -31,12 +31,14 @@ def debug(func,*args, **kwargs):
 
 def retreive_agent_first(state: dict):
     res = retreive_document_information(document=state["first_statement_extraction"]["document"],
-                                        questions=state["questions_first_statement"]["variations"])
+                                        questions=state["questions_first_statement"]["variations"],
+                                        statement = state["first_statement"])
     return res
 
 def retreive_agent_second(state: dict):
     res = retreive_document_information(document=state["second_statement_extraction"]["document"],
-                                        questions=state["questions_second_statement"]["variations"])
+                                        questions=state["questions_second_statement"]["variations"],
+                                        state= state["second_statement"])
     return res
 class Operation:
 
