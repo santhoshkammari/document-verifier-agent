@@ -3,6 +3,6 @@
   "source_statement": "Commercial invoice date",
   "destination_statement": "Issue date of bill of lading",
   "operation": "should be less than",
-  "first_statement": "Commercial invoice date",
-  "second_statement": "Issue date of bill of lading"
+  "second_statement": "Issue date of bill of lading",
+  "first_statement": "Commercial invoice date"
 }
