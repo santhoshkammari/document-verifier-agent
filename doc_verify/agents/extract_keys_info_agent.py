@@ -93,27 +93,8 @@ def extraction_keys_info_agent(query):
     1. Examine the context carefully, which may consist of short phrases, incomplete sentences, or unordered text fragments.
     2. Identify any relevant pieces of information that could correspond to the requested field.
     3. Extract the relevant value(s) from those pieces of information.
-    4. If the field is not present, respond with "Field not found."
-    5. If the context is unclear or unintelligible, respond with "Context unclear."
-    6. Separate multiple values with commas.
-    7. Preserve any special characters or formatting in the field value.
 
-    Examples:
-    Context: "John Doe, 25, New York City"
-    Document Type: Personal Information
-    Field: Age
-    Output: 25
-
-    Context: "ACME Corp. stock prices: $10.50 $11.25 $10.75 Monday"
-    Document Type: Financial Report
-    Field: Stock Prices
-    Output: $10.50, $11.25, $10.75
-
-    Context: "Error: /user/documents/report.txt File not found"
-    Document Type: Error Log
-    Field: Error Message
-    Output: File not found at path '/user/documents/report.txt'
-
+    
     Response Format:
     {format_instructions}"""
 
