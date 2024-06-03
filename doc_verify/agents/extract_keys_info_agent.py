@@ -128,7 +128,7 @@ def extraction_keys_info_agent(query):
     {format_instructions}
     """
     prompt = PromptTemplate(
-        template=template_v1_0_1,
+        template=template_v1_0_0,
         input_variables=["query", "field"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
