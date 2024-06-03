@@ -65,21 +65,11 @@ class Variations(BaseModel):
 def generate_questions_agent(query):
     parser = PydanticOutputParser(pydantic_object=Variations)
     template = """
-    Your task is to generate five variations  or rephrasing of the given statement related to trade finance rules or regulations.
+    Your task is to generate five variations  or rephrasing of the given statement.
     these variations should capture the essence of the original statement but be expressed in different ways to improve the chance of finding relevant information in a data corpus
     
     Input: {query}
     
-    Examples:
-    Input: The expiry date of the letter of credit should not exceed 90 days from the date of shipment.
-    Variations:
-    1. The letter of credit's expiration date must be within 90 days of the shipment date.
-    2. The validity period of the letter of credit cannot surpass 90 days after the goods are shipped.
-    3. The letter of credit's expiry should be no later than 90 days from the shipment date.
-    4. The maximum validity duration for the letter of credit is 90 days from the date of dispatch.
-    5. The letter of credit's expiration must occur within a 90-day window after the shipment date.
-
-
     Provide your response in the following format:
     
     {format_instructions}

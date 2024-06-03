@@ -172,7 +172,7 @@ if __name__ == '__main__':
     "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139
     "Goods) and 22 (Law and Jusiscbon}. Tho Package""","field":"Number","document":"bill of lading"}
 
-    temp = json.load(open("doc_verify/debug/extract_agent_first.json"))
+    temp = json.load(open("/home/ntlpt59/MAIN/san_github/document-verifier-agent/doc_verify/debug/extract_agent_second.json"))
     type = "second"
     query["query"] = "\n".join(temp[f"{type}_state_embeds"])
     query["field"] = temp[f"{type}_statement_extraction"]["field"]
