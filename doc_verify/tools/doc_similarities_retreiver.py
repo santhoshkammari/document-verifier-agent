@@ -49,9 +49,19 @@ def retreive_document_information(document,questions:List,statement):
 
 
     sorted_matches = sorted(matches,key=lambda x:x[0],reverse=True)
+
     with open(f"session/{document} matches.json",'w') as f:
-        json.dump(matches,f,indent=2)
-    return [_[-1] for _ in sorted_matches[:k]]
+        json.dump(sorted_matches,f,indent=2)
+
+    split_filterd = [_[-1] for _ in sorted_matches]
+    seen = set()
+    unique_splits = []
+    for s in split_filterd:
+        if s not in seen:
+            unique_splits.append(s)
+            seen.add(s)
+
+    return unique_splits[:k]
 
 if __name__ == '__main__':
     print(retreive_document_information("bol",["what is the date of the bill of lading?"]))

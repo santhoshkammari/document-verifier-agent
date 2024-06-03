@@ -1,116 +1,112 @@
 {
-  "query": "commercial invoice date should be less than the issue date of bill of lading",
-  "source_statement": "Commercial invoice date",
-  "destination_statement": "Issue date of bill of lading",
-  "operation": "should be less than",
-  "first_statement": "Commercial invoice date",
-  "second_statement": "Issue date of bill of lading",
-  "second_statement_extraction": {
-    "document": "Bill of Lading",
-    "field": "Issue Date"
-  },
+  "query": "bill of exchange date is less than the issue date of commercial invoice",
+  "source_statement": "bill of exchange date",
+  "destination_statement": "issue date of commercial invoice",
+  "operation": "is less than",
+  "first_statement": "bill of exchange date",
+  "second_statement": "issue date of commercial invoice",
   "questions_second_statement": {
     "variations": [
       {
-        "variation": "The issue date of bill of lading should not exceed [insert timeframe] from the shipment date."
+        "variation": "Date of commercial invoice issued"
       },
       {
-        "variation": "The bill of lading's issuance date must be within [insert timeframe] of the shipment date."
+        "variation": "Invoice date recorded on commercial document"
       },
       {
-        "variation": "The validity period of the bill of lading cannot surpass [insert timeframe] after the goods are shipped."
+        "variation": "Commercial invoice dated [date]"
       },
       {
-        "variation": "The bill of lading's issue should be no later than [insert timeframe] from the shipment date."
+        "variation": "Invoice issuance date specified"
       },
       {
-        "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
+        "variation": "Date when commercial invoice was created or sent"
       },
       {
-        "variation": "Issue date of bill of lading"
+        "variation": "issue date of commercial invoice"
       }
     ]
   },
   "first_statement_extraction": {
-    "document": "Commercial Invoice",
+    "document": "Bill of Exchange",
     "field": "Date"
+  },
+  "second_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Issue Date"
   },
   "questions_first_statement": {
     "variations": [
       {
-        "variation": "The commercial invoice date should not exceed 90 days from the shipment date."
+        "variation": "Date of bill of exchange"
       },
       {
-        "variation": "The shipment date's corresponding commercial invoice must be within 90 days."
+        "variation": "Bill of exchange dated [date]"
       },
       {
-        "variation": "The validity period of the commercial invoice cannot surpass 90 days after the goods are shipped."
+        "variation": "The date on which a bill of exchange was issued"
       },
       {
-        "variation": "The maximum validity duration for the commercial invoice is 90 days from the date of dispatch."
+        "variation": "A financial instrument with a specific date, namely [date]"
       },
       {
-        "variation": "The commercial invoice's expiration must occur within a 90-day window after the shipment date."
+        "variation": "Information about the issuance of a bill of exchange on [date]"
       },
       {
-        "variation": "Commercial invoice date"
+        "variation": "bill of exchange date"
       }
     ]
   },
   "first_state_embeds": [
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
-    "DATE: SEP.13,2013",
-    "TEL:02-25062089 FAX:02-25051990",
-    "TEL:02-25062089 FAX:02-25051990",
-    "MARKS & NOS. DESCRIPTION QUANTITY UNIT PRIC",
-    "DATE: SEP.13,2013",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
-    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "UNIT PRIC AMOUNT",
-    "DATE: SEP.13,2013",
-    "TEL:02-25062089 FAX:02-25051990",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013"
+    "Bankof America SOLE BILL OF EXCHANGE",
+    "PAY TO THE ORDER OF: Bank of America Maturity",
+    "Maturity Date: Draft Date: 21 October 2013",
+    "Merrill Lynch\nDate: 21 October 2013 No.: 82888594",
+    "PAY TO THE ORDER OF ANY BANK",
+    "Value received and charge the same to the account",
+    "OR BANKER FOR COLLECTION\nBank of America",
+    "Qu\n\n      \n\nAutiorized Signature",
+    "account of:",
+    "AMOUNT: FIFTY FOUR THOUSAND THREE HUNDRED ONE AND",
+    "Wells Fargo Center. Suite 2929",
+    "er\n\nViewed On: Oct 21, 2013 9:28 PM",
+    "INDORE, 452001",
+    "1300 SW Fifth Avenue\nPortland, OR 97201",
+    "PLACE OF DRAWING: 1300 SW Fifth Avenue At: Sight",
+    "DRAWER:",
+    "ONE AND 80 / 100 54,301.80USD",
+    "ENDORSEMENT",
+    "Columbia Grain, INC.",
+    "TO DRAWEE: SHALEEN OVERSEAS\n48, SAAJAN NAGAR",
+    "Page: 3 of 3"
   ],
   "second_state_embeds": [
-    "of this Bill of Lading.",
-    "this Bill of Lading accepts the liabifity towards",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "| Place and Date of Issue",
-    "\u00a9 By accepting this Bill of Lading shipper",
-    "this Bill of Lading accepts the liabifity towards",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "this Bill of Lading accepts the liabifity towards",
-    "Date of Period of Delivery Mode Means of",
-    "this Bill of Lading accepts the liabifity towards",
-    "this Bill of Lading accepts the liabifity towards",
-    "this Bill of Lading accepts the liabifity towards",
-    "Date of Period of Delivery Mode Means of",
-    "of this Bill of Lading.",
-    "@ For freight prepaid Bil of Ladings, delivery of",
-    "\u00a9 Byaccepting this Bill of Lading, the shipper",
-    "Date of Period of Delivery Mode Means of",
-    "\u00a9 By accepting this Bill of Lading shipper"
+    "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
+    "AS PER SALES CONTRACT NO.10250800 DATE:",
+    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
+    "DATE: SEP.13,2013",
+    "TEL:02-25062089 FAX:02-25051990",
+    "MARKS & NOS. DESCRIPTION QUANTITY UNIT PRIC",
+    "UNIT PRIC AMOUNT",
+    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
+    "- OCEANIC PETROLEUM SOURCE (ASIA PACIFIC) LTD.",
+    "CIF KOLKATA\nKGS USD",
+    "SEVEN HUNDRED",
+    "SAY TOTAL: U.S.DOLLARS SEVEN THOUSAND SEVEN",
+    "KGS USD\nPCS: FLOCK FABRICS 3,102.00 . 7,755.00",
+    "DIST. NORTH 24 PGS. PIN 700110, WEST BENGAL",
+    "COUNTRY OF ORIGIN : CHINA",
+    "CTN:",
+    "CHANDPUR LENINGARH, P.S \u2014 GHOLA,",
+    "MTR: VWVVVVV VVVVVVV",
+    "10TH FLOOR. ,NO.354-1,FU HSING N.RD., TAIPEI",
+    "FOR ACCOUNT AND RISK OF MESSERS' BISWAS LIGHTING",
+    "SAILING ON OR ABOUT OCT.14,2013 FROM: SHANGHAI,",
+    "TAIPEI TAIWAN R.O.C.",
+    "(U.S.$) (U.S.$)",
+    "VILLAGE \u2014 LENINGARH, G BLOCK, P.O. JUGUBERIA,",
+    "alf of a ;"
   ],
-  "first_document_context": "Not found",
-  "second_document_context": "Place and Date of Issue"
+  "first_document_context": "21 October 2013 or Oct 21, 2013 9:28 PM",
+  "second_document_context": "OCT.14,2013 or SEP.13,2013 or OCT.14,2013"
 }

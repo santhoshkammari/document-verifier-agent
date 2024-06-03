@@ -1,53 +1,53 @@
 {
-  "query": "commercial invoice date should be less than the issue date of bill of lading",
-  "source_statement": "Commercial invoice date",
-  "destination_statement": "Issue date of bill of lading",
-  "operation": "should be less than",
-  "first_statement": "Commercial invoice date",
-  "second_statement": "Issue date of bill of lading",
-  "second_statement_extraction": {
-    "document": "Bill of Lading",
-    "field": "Issue Date"
-  },
+  "query": "bill of exchange date is less than the issue date of commercial invoice",
+  "source_statement": "bill of exchange date",
+  "destination_statement": "issue date of commercial invoice",
+  "operation": "is less than",
+  "first_statement": "bill of exchange date",
+  "second_statement": "issue date of commercial invoice",
   "questions_second_statement": {
     "variations": [
       {
-        "variation": "The issue date of bill of lading should not exceed [insert timeframe] from the shipment date."
+        "variation": "Date of commercial invoice issued"
       },
       {
-        "variation": "The bill of lading's issuance date must be within [insert timeframe] of the shipment date."
+        "variation": "Invoice date recorded on commercial document"
       },
       {
-        "variation": "The validity period of the bill of lading cannot surpass [insert timeframe] after the goods are shipped."
+        "variation": "Commercial invoice dated [date]"
       },
       {
-        "variation": "The bill of lading's issue should be no later than [insert timeframe] from the shipment date."
+        "variation": "Invoice issuance date specified"
       },
       {
-        "variation": "The maximum validity duration for the bill of lading is [insert timeframe] from the date of dispatch."
+        "variation": "Date when commercial invoice was created or sent"
       }
     ]
   },
   "first_statement_extraction": {
-    "document": "Commercial Invoice",
+    "document": "Bill of Exchange",
     "field": "Date"
+  },
+  "second_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Issue Date"
   },
   "questions_first_statement": {
     "variations": [
       {
-        "variation": "The commercial invoice date should not exceed 90 days from the shipment date."
+        "variation": "Date of bill of exchange"
       },
       {
-        "variation": "The shipment date's corresponding commercial invoice must be within 90 days."
+        "variation": "Bill of exchange dated [date]"
       },
       {
-        "variation": "The validity period of the commercial invoice cannot surpass 90 days after the goods are shipped."
+        "variation": "The date on which a bill of exchange was issued"
       },
       {
-        "variation": "The maximum validity duration for the commercial invoice is 90 days from the date of dispatch."
+        "variation": "A financial instrument with a specific date, namely [date]"
       },
       {
-        "variation": "The commercial invoice's expiration must occur within a 90-day window after the shipment date."
+        "variation": "Information about the issuance of a bill of exchange on [date]"
       }
     ]
   }
