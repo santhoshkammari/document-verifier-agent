@@ -127,8 +127,17 @@ def extraction_keys_info_agent(query):
     Response Format:
     {format_instructions}
     """
+
+    template_v1_0_2 = """
+    You are the Document extraction expert. Your task is to find the gather all related information parts for the field of a given document.
+    
+    Context: {query}
+    Field: {field}
+    Provide the response in the following format:
+    {format_instructions}   
+    """
     prompt = PromptTemplate(
-        template=template_v1_0_0,
+        template=template_v1_0_2,
         input_variables=["query", "field"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
