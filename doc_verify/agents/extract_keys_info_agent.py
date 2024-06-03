@@ -50,12 +50,12 @@
 #
 #
 #     return res
+import json
 
-
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser, JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
-from tools.llm import LLM
+from doc_verify.tools.llm import LLM
 
 class Field(BaseModel):
     """Information in the context"""
@@ -88,14 +88,20 @@ def extraction_keys_info_agent(query):
 
     model = LLM.call_model
 
-    chain = prompt | model | parser
+    chain = prompt | model
 
     res = chain.invoke(query)
 
     try:
+        res = parser.parse(res)
         res = res.field
     except:
-        res = "Not found"
+        try:
+            json_parser = JsonOutputParser()
+            res = json_parser.parse(res)
+            res = res["field"]
+        except:
+            res = "Not found"
     return res
 
 if __name__ == '__main__':
@@ -109,4 +115,12 @@ if __name__ == '__main__':
     "IDESCRIPTION OF GOODS i MEASUREMENT
     "GILL OF LADING No,\n\nZIMUOSS160139 ZIMUOSS160139
     "Goods) and 22 (Law and Jusiscbon}. Tho Package""","field":"Number","document":"bill of lading"}
+
+    temp = json.load(open("/home/ntlpt59/MAIN/san_github/document-verifier-agent/doc_verify/debug/extract_agent_first.json"))
+    type = "first"
+    query["query"] = "\n".join(temp[f"{type}_state_embeds"])
+    query["field"] = temp[f"{type}_statement_extraction"]["field"]
+    query["document"] = temp[f"{type}_statement_extraction"]["document"]
+    print(query)
+
     print(extraction_keys_info_agent(query))

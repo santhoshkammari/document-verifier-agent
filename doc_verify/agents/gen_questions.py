@@ -68,6 +68,8 @@ def generate_questions_agent(query):
     Your task is to generate five variations  or rephrasing of the given statement related to trade finance rules or regulations.
     these variations should capture the essence of the original statement but be expressed in different ways to improve the chance of finding relevant information in a data corpus
     
+    Input: {query}
+    
     Examples:
     Input: The expiry date of the letter of credit should not exceed 90 days from the date of shipment.
     Variations:
@@ -82,8 +84,7 @@ def generate_questions_agent(query):
     
     {format_instructions}
     
-    Input: {query}
-    Variations: """
+    """
     prompt = PromptTemplate(
         template=template,
         input_variables=["query"],
@@ -99,4 +100,4 @@ def generate_questions_agent(query):
 
 
 if __name__ == '__main__':
-    print(generate_questions_agent("matches with commercial invoice number"))
+    print(generate_questions_agent("Issue Date of Bill of Lading"))
