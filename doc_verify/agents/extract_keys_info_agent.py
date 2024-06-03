@@ -148,18 +148,17 @@ def extraction_keys_info_agent(query):
 
     res = chain.invoke(query)
 
-    res = parser.parse(res.content)
-    res = res.field
     print(f'{res.content=}')
 
-
     try:
-        res = parser.parse(res)
+        res = parser.parse(res.content)
         res = res.field
     except:
         # try:
+        print('==================================')
+        print('==================================')
         json_parser = JsonOutputParser()
-        res = json_parser.parse(res)
+        res = json_parser.parse(res.content)
         res = res["field"]
         # except:
         #     res = "Not found"
