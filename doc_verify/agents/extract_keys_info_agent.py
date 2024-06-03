@@ -55,7 +55,7 @@ import json
 from langchain_core.output_parsers import PydanticOutputParser, JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
-from doc_verify.tools.llm import LLM
+from tools.llm import LLM
 
 class Field(BaseModel):
     """Information in the context"""
