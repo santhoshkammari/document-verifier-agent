@@ -156,7 +156,7 @@ def extraction_keys_info_agent(query):
         try:
             json_parser = JsonOutputParser()
             res = json_parser.parse(res)
-            res = res["field"]
+            # res = res["field"]
         except:
             res = "Not found"
     return res
