@@ -148,7 +148,12 @@ def extraction_keys_info_agent(query):
 
     res = chain.invoke(query)
 
+
+    res = parser.parse(res)
+    res = res.field
     print(f'{res=}')
+
+
     try:
         res = parser.parse(res)
         res = res.field
@@ -156,7 +161,7 @@ def extraction_keys_info_agent(query):
         try:
             json_parser = JsonOutputParser()
             res = json_parser.parse(res)
-            # res = res["field"]
+            res = res["field"]
         except:
             res = "Not found"
     return res
