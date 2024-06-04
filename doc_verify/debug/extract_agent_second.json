@@ -1,112 +1,116 @@
 {
-  "query": "bill of exchange date is less than the issue date of commercial invoice",
-  "source_statement": "bill of exchange date",
-  "destination_statement": "issue date of commercial invoice",
-  "operation": "is less than",
-  "first_statement": "bill of exchange date",
-  "second_statement": "issue date of commercial invoice",
-  "questions_second_statement": {
-    "variations": [
-      {
-        "variation": "Date of commercial invoice issued"
-      },
-      {
-        "variation": "Invoice date recorded on commercial document"
-      },
-      {
-        "variation": "Commercial invoice dated [date]"
-      },
-      {
-        "variation": "Invoice issuance date specified"
-      },
-      {
-        "variation": "Date when commercial invoice was created or sent"
-      },
-      {
-        "variation": "issue date of commercial invoice"
-      }
-    ]
-  },
-  "first_statement_extraction": {
-    "document": "Bill of Exchange",
-    "field": "Date"
-  },
+  "query": "country of origin is it same in commercial invoice and bill of lading",
+  "source_statement": "commercial invoice",
+  "destination_statement": "bill of lading",
+  "operation": "is same",
+  "first_statement": "commercial invoice",
+  "second_statement": "bill of lading",
   "second_statement_extraction": {
-    "document": "Commercial Invoice",
-    "field": "Issue Date"
+    "document": "Bill of Lading",
+    "field": "Country of Origin"
   },
   "questions_first_statement": {
     "variations": [
       {
-        "variation": "Date of bill of exchange"
+        "variation": "Business document for goods sold"
       },
       {
-        "variation": "Bill of exchange dated [date]"
+        "variation": "Formal request for payment of goods"
       },
       {
-        "variation": "The date on which a bill of exchange was issued"
+        "variation": "Commercial transaction record"
       },
       {
-        "variation": "A financial instrument with a specific date, namely [date]"
+        "variation": "Invoice for goods or services provided"
       },
       {
-        "variation": "Information about the issuance of a bill of exchange on [date]"
+        "variation": "Financial statement for a commercial transaction"
       },
       {
-        "variation": "bill of exchange date"
+        "variation": "commercial invoice"
       }
     ]
   },
+  "questions_second_statement": {
+    "variations": [
+      {
+        "variation": "Shipping document for goods"
+      },
+      {
+        "variation": "Proof of shipment and ownership"
+      },
+      {
+        "variation": "Commercial invoice for transported goods"
+      },
+      {
+        "variation": "Document of title for goods in transit"
+      },
+      {
+        "variation": "Evidence of goods shipped and received"
+      },
+      {
+        "variation": "bill of lading"
+      }
+    ]
+  },
+  "first_statement_extraction": {
+    "document": "Commercial Invoice",
+    "field": "Country of origin"
+  },
   "first_state_embeds": [
-    "Bankof America SOLE BILL OF EXCHANGE",
-    "PAY TO THE ORDER OF: Bank of America Maturity",
-    "Maturity Date: Draft Date: 21 October 2013",
-    "Merrill Lynch\nDate: 21 October 2013 No.: 82888594",
-    "PAY TO THE ORDER OF ANY BANK",
-    "Value received and charge the same to the account",
-    "OR BANKER FOR COLLECTION\nBank of America",
-    "Qu\n\n      \n\nAutiorized Signature",
-    "account of:",
-    "AMOUNT: FIFTY FOUR THOUSAND THREE HUNDRED ONE AND",
-    "Wells Fargo Center. Suite 2929",
-    "er\n\nViewed On: Oct 21, 2013 9:28 PM",
-    "INDORE, 452001",
-    "1300 SW Fifth Avenue\nPortland, OR 97201",
-    "PLACE OF DRAWING: 1300 SW Fifth Avenue At: Sight",
-    "DRAWER:",
-    "ONE AND 80 / 100 54,301.80USD",
-    "ENDORSEMENT",
-    "Columbia Grain, INC.",
-    "TO DRAWEE: SHALEEN OVERSEAS\n48, SAAJAN NAGAR",
-    "Page: 3 of 3"
-  ],
-  "second_state_embeds": [
     "INVOICE OF NO. OPS-70470/2013\nDATE OCT.14,2013",
-    "AS PER SALES CONTRACT NO.10250800 DATE:",
-    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
-    "DATE: SEP.13,2013",
-    "TEL:02-25062089 FAX:02-25051990",
     "MARKS & NOS. DESCRIPTION QUANTITY UNIT PRIC",
     "UNIT PRIC AMOUNT",
-    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
-    "- OCEANIC PETROLEUM SOURCE (ASIA PACIFIC) LTD.",
-    "CIF KOLKATA\nKGS USD",
-    "SEVEN HUNDRED",
-    "SAY TOTAL: U.S.DOLLARS SEVEN THOUSAND SEVEN",
+    "AS PER SALES CONTRACT NO.10250800 DATE:",
     "KGS USD\nPCS: FLOCK FABRICS 3,102.00 . 7,755.00",
-    "DIST. NORTH 24 PGS. PIN 700110, WEST BENGAL",
-    "COUNTRY OF ORIGIN : CHINA",
+    "TEL:02-25062089 FAX:02-25051990",
+    "SHIPPED BY SEA PER S.S. COSCO OCEANIA V.033W",
+    "SAY TOTAL: U.S.DOLLARS SEVEN THOUSAND SEVEN",
+    "CIF KOLKATA\nKGS USD",
     "CTN:",
-    "CHANDPUR LENINGARH, P.S \u2014 GHOLA,",
-    "MTR: VWVVVVV VVVVVVV",
-    "10TH FLOOR. ,NO.354-1,FU HSING N.RD., TAIPEI",
-    "FOR ACCOUNT AND RISK OF MESSERS' BISWAS LIGHTING",
-    "SAILING ON OR ABOUT OCT.14,2013 FROM: SHANGHAI,",
-    "TAIPEI TAIWAN R.O.C.",
+    "- OCEANIC PETROLEUM SOURCE (ASIA PACIFIC) LTD.",
+    "SEVEN HUNDRED",
+    "DIST. NORTH 24 PGS. PIN 700110, WEST BENGAL",
+    "LIGHTING AND CO.,",
     "(U.S.$) (U.S.$)",
-    "VILLAGE \u2014 LENINGARH, G BLOCK, P.O. JUGUBERIA,",
-    "alf of a ;"
+    "MTR: VWVVVVV VVVVVVV",
+    "FOR ACCOUNT AND RISK OF MESSERS' BISWAS LIGHTING",
+    "CHANDPUR LENINGARH, P.S \u2014 GHOLA,",
+    "alf of a ;",
+    "B/L NO. OOLU2539190800 DATE: OCT.14,2013",
+    "COUNTRY OF ORIGIN : CHINA",
+    "Wpisnsia vennturels\n\nwhl",
+    "Oceanic Petroleum Source (Asia Pacific) Lid",
+    "FIFTY FIVE ONLY.",
+    "VILLAGE \u2014 LENINGARH, G BLOCK, P.O. JUGUBERIA,"
   ],
-  "first_document_context": "21 October 2013 or Oct 21, 2013 9:28 PM",
-  "second_document_context": "OCT.14,2013 or SEP.13,2013 or OCT.14,2013"
+  "second_state_embeds": [
+    "of this Bill of Lading.",
+    "\u00a9 Byaccepting this Bill of Lading, the shipper",
+    "this Bill of Lading accepts the liabifity towards",
+    "\u00a9 By accepting this Bill of Lading shipper",
+    "case of freight collect",
+    "the right to hold the shipment & recover all",
+    "the carrier for payment of freight (in case of",
+    "FREIGHT PREPAID . . 6,000.000\nKGS",
+    "@ For freight prepaid Bil of Ladings, delivery of",
+    "for transport and delivery as mentioned above,",
+    "Freight Amount",
+    "seaworthy packing. The packing condition will be",
+    "MULTI-MODAL TRANSPORT DOCUMENT / BILL OF LADING",
+    "of Cargo is subject io realisation of freight",
+    "place at which the goods are taken in charge, to",
+    "Place of Delivery Route / Place of transhipment",
+    "shipments}, Accrued Government, reshipment or",
+    "Consignee (or order) FREIGHTBRIDGE LoGistics Pvt.",
+    "assumes responsibility for such transport. :",
+    "Freight payable at Number of OriginalB L/MTD{s) |",
+    "duly endorsed in\u2019 exchange for the goods. In",
+    "condition herein at the place of receipt for",
+    "the goods if the same are not in seaworthy",
+    "@ Forshipments where inland trucking is involved",
+    "shipper accepts his responsibility towards the"
+  ],
+  "first_document_context": "CHINA",
+  "second_document_context": "Not mentioned"
 }

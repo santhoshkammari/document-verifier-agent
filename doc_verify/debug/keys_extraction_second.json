@@ -1,35 +1,12 @@
 {
-  "query": "bill of exchange date is less than the issue date of commercial invoice",
-  "source_statement": "bill of exchange date",
-  "destination_statement": "issue date of commercial invoice",
-  "operation": "is less than",
-  "first_statement": "bill of exchange date",
-  "second_statement": "issue date of commercial invoice",
-  "questions_second_statement": {
-    "variations": [
-      {
-        "variation": "Date of commercial invoice issued"
-      },
-      {
-        "variation": "Invoice date recorded on commercial document"
-      },
-      {
-        "variation": "Commercial invoice dated [date]"
-      },
-      {
-        "variation": "Invoice issuance date specified"
-      },
-      {
-        "variation": "Date when commercial invoice was created or sent"
-      }
-    ]
-  },
-  "first_statement_extraction": {
-    "document": "Bill of Exchange",
-    "field": "Date"
-  },
+  "query": "country of origin is it same in commercial invoice and bill of lading",
+  "source_statement": "commercial invoice",
+  "destination_statement": "bill of lading",
+  "operation": "is same",
+  "first_statement": "commercial invoice",
+  "second_statement": "bill of lading",
   "second_statement_extraction": {
-    "document": "Commercial Invoice",
-    "field": "Issue Date"
+    "document": "Bill of Lading",
+    "field": "Country of Origin"
   }
 }

@@ -1,26 +1,49 @@
 {
-  "query": "bill of exchange date is less than the issue date of commercial invoice",
-  "source_statement": "bill of exchange date",
-  "destination_statement": "issue date of commercial invoice",
-  "operation": "is less than",
-  "first_statement": "bill of exchange date",
-  "second_statement": "issue date of commercial invoice",
+  "query": "country of origin is it same in commercial invoice and bill of lading",
+  "source_statement": "commercial invoice",
+  "destination_statement": "bill of lading",
+  "operation": "is same",
+  "first_statement": "commercial invoice",
+  "second_statement": "bill of lading",
+  "second_statement_extraction": {
+    "document": "Bill of Lading",
+    "field": "Country of Origin"
+  },
+  "questions_first_statement": {
+    "variations": [
+      {
+        "variation": "Business document for goods sold"
+      },
+      {
+        "variation": "Formal request for payment of goods"
+      },
+      {
+        "variation": "Commercial transaction record"
+      },
+      {
+        "variation": "Invoice for goods or services provided"
+      },
+      {
+        "variation": "Financial statement for a commercial transaction"
+      }
+    ]
+  },
   "questions_second_statement": {
     "variations": [
       {
-        "variation": "Date of commercial invoice issued"
+        "variation": "Shipping document for goods"
       },
       {
-        "variation": "Invoice date recorded on commercial document"
+        "variation": "Proof of shipment and ownership"
       },
       {
-        "variation": "Commercial invoice dated [date]"
+        "variation": "Commercial invoice for transported goods"
       },
       {
-        "variation": "Invoice issuance date specified"
+        "variation": "Document of title for goods in transit"
       },
       {
-        "variation": "Date when commercial invoice was created or sent"
+        "variation": "Evidence of goods shipped and received"
       }
     ]
   }

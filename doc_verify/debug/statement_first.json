@@ -1,8 +1,8 @@
 {
-  "query": "bill of exchange date is less than the issue date of commercial invoice",
-  "source_statement": "bill of exchange date",
-  "destination_statement": "issue date of commercial invoice",
-  "operation": "is less than",
-  "first_statement": "bill of exchange date",
-  "second_statement": "issue date of commercial invoice"
+  "query": "country of origin is it same in commercial invoice and bill of lading",
+  "source_statement": "commercial invoice",
+  "destination_statement": "bill of lading",
+  "operation": "is same",
+  "first_statement": "commercial invoice",
+  "second_statement": "bill of lading"
 }

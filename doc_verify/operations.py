@@ -79,7 +79,7 @@ class Operation:
 
 
     def keys_extraction_first(self,state: dict):
-        res = extraction_agent(state["source_statement"])
+        res = extraction_agent(state["source_statement"],state["query"])
         # res =  {
         #     "document": "Bill of Lading",
         #     "field": "Number"
@@ -88,7 +88,7 @@ class Operation:
         return state
 
     def keys_extraction_second(self,state: dict):
-        res = extraction_agent(state["destination_statement"])
+        res = extraction_agent(state["destination_statement"],state["query"])
         # res = {
         #     "document": "Commercial Invoice",
         #     "field": "Number"
